@@ -94,6 +94,7 @@ Hello, World! I am process 1 of 2 on apcpu-002.
 Hello, World! I am process 0 of 2 on apcpu-002.
 ```
 
+---
 
 # Elegant and PElegant
 elegant and Pelegant are available on all cluster nodes
