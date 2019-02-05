@@ -21,7 +21,7 @@ Never use your home directory, instead use GPFS
 
 To setup SLURM and related environment variables:
 ```bash
-user@apcpu-master01:~$ source /opt/slurm/setup.sh
+> source /opt/slurm/setup.sh
 ```
 
 
