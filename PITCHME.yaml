@@ -1,0 +1,3 @@
+mathjax : TeX-AMS_SVG
+
+theme-override : assets/css/PITCHME.css
