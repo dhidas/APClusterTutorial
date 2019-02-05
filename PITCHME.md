@@ -48,7 +48,7 @@ Download a set of basic examples, compile, and submit sbatch
 > git clone https://gitlab.nsls2.bnl.gov/dhidas/SLURMExamples
 > cd SLURMExamples/CPP
 ```
-Compile the hello executable
+Compile the hello executable (note this is not the system default mpi.  Look to /opt for correct software)
 ```bash
 > mpic++ hello.cc -o hello
 ```
