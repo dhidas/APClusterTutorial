@@ -5,12 +5,12 @@
 # APCluster Login and Setup
 
 You may only login to the head-node, currently apcpu-master01
-```
+```bash
 ssh -X apcpu-master01
 ```
 
 To setup SLURM and related environment variables:
-```
+```bash
 > source /opt/slurm/setup.sh
 ```
 
