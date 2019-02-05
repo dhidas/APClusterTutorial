@@ -104,4 +104,31 @@ or
 ```bash
 > Pelegant
 ```
+Move to the elegant directory in SLURMExamples
+```bash
+> cd ../elegant
+```
+If you do not already have RPN DEFNS, you need it:
+```bash
+> cp /GPFS/APC/dhidas/.defns.rpn /GPFS/APC/user/.defns.rpn
+```
+And you need to add it to your path
+```bash
+> export RPN_DEFNS=/GPFS/APC/user/.defns.rpn
+```
 
+---
+
+# Elegant and Pelegant via SLURM
+Run elegant:
+```bash
+srun elegant fma1p.ele
+```
+Run Pelegant with 88 cores (here you need to specify the correct mpi interface library: pmi2)
+```bash
+> srun -n 88 --mpi=pmi2 Pelegant fma1p.ele
+```
+You can use sbatch to submit a Pelegant job
+```bash
+sbatch submit.sh
+```
