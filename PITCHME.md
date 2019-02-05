@@ -61,3 +61,33 @@ or submit a batch job using the submit.sh script and sbatch
 > sbatch submit.sh
 ```
 
+---
+
+# The SBATCH script
+Many options can be specified with the #SBATCH directives.  The basic example script is
+```text
+#!/bin/bash
+#SBATCH --job-name=hello
+#SBATCH --error=job.%J.err
+#SBATCH --output=job.%J.out
+#SBATCH --ntasks=2
+#SBATCH --time=10:00
+
+srun ./hello
+```
+This will start 2 hello jobs and log output and errors.
+
+---
+
+# MPI, Python MPI
+You almost never need worry about MPI.  You should NEVER need to use mpirun nor mpiexec.  SLURM knows about MPI.  An example python MPI program:
+```bash
+> cd ../Python
+> srun -n 2 python hello.py
+```
+will properly engage MPI and should print out something similar to
+```text
+Hello, World! I am process 1 of 2 on apcpu-002.
+Hello, World! I am process 0 of 2 on apcpu-002.
+```
+
