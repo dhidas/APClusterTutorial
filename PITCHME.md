@@ -77,6 +77,9 @@ srun ./hello
 ```
 This will start 2 hello jobs and log output and errors.
 
+For more information see:
+- https://slurm.schedmd.com/sbatch.html
+
 ---
 
 # MPI, Python MPI
@@ -89,5 +92,16 @@ will properly engage MPI and should print out something similar to
 ```text
 Hello, World! I am process 1 of 2 on apcpu-002.
 Hello, World! I am process 0 of 2 on apcpu-002.
+```
+
+
+# Elegant and PElegant
+elegant and Pelegant are available on all cluster nodes
+```bash
+> elegant
+```
+or
+```bash
+> Pelegant
 ```
 
