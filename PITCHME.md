@@ -133,3 +133,7 @@ You can use sbatch to submit a Pelegant job
 ```bash
 sbatch submit.sh
 ```
+and you can plot something with
+```
+sddsplot -columnNames=s,etax -columnNames=s,betax fma1p.twi
+```
