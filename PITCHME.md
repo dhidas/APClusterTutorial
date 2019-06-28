@@ -15,20 +15,10 @@ user@box64-1:~$ ssh -X user@apcpu-master01
 
 Never use your home directory, instead use GPFS
 ```bash
-> mkdir /GPFS/APC/user
 > cd /GPFS/APC/user
 ```
 
-To setup SLURM and related environment variables:
-```bash
-> source /opt/slurm/setup.sh
-```
-
-
----
-
-# Test SLURM
-Now slurm is setup, test you can run a simple command
+The slurm environment is setup for you.  You can test running a job with:
 ```bash
 > srun -n 2 hostname
 ```
@@ -37,12 +27,76 @@ should run the 'hostname' command on 2 cores and print something like:
 apcpu-002
 apcpu-002
 ```
-If this works, SLURM is working correctly for you.
+
+
+---
+
+# Environment Modules
+You can load and unload software modules you wish to use:
+```bash
+> module load python/3.7.3
+> module load elegant-latest
+> module unload python
+```
+To see a list of all available software:
+```bash
+> module spider
+```
+To see a list of available software for the compiler/MPI combination currently loaded:
+```bash
+> module avail
+```
+To see what modules are currently loaded:
+```bash
+> module list
+```
+
+
+---
+
+# Environment Modules - MPI
+To use most MPI, you need a compiler+MPI combination.  A few recommendations are:
+```bash
+> module load gcc openmpi       # Trust the defaults
+> module load gcc mpich         # Trust the defaults
+> module load intel             # Has its own mpiicc, mpiifort
+> module load intel openmpi     # Use openmpi with intel compiler
+```
+To see a list of all available software:
+```bash
+> module spider
+```
+To see a list of available software for the compiler/MPI combination currently loaded:
+```bash
+> module avail
+```
+
+
+
+---
+
+# Modules of interest
+Some currently installed modules of interest:
+```text
+   gcc/4.9    gcc/6.5    gcc/7.4 (D)    gcc/8.3    gcc/9.1
+   python/2.7.16    python/3.5.7    python/3.7.3 (D)
+   python/3.4.10    python/3.6.8
+   elegant-latest
+   fluka-latest
+   MAD-X/5.04.02
+   julia/1.1.1
+```
+
+
 
 
 ---
 
 # Download Examples & sbatch
+Setup gcc and mpi version of choice
+```bash
+module load gcc/7.4 openmpi
+```
 Download a set of basic examples, compile, and submit sbatch
 ```bash
 > git clone https://gitlab.nsls2.bnl.gov/dhidas/SLURMExamples
@@ -86,6 +140,7 @@ For more information see:
 You almost never need worry about MPI.  You should NEVER need to use mpirun nor mpiexec.  SLURM knows about MPI.  An example python MPI program:
 ```bash
 > cd ../Python
+> module load python
 > srun -n 2 python hello.py
 ```
 will properly engage MPI and should print out something similar to
@@ -96,31 +151,15 @@ Hello, World! I am process 0 of 2 on apcpu-002.
 
 ---
 
-# Elegant and PElegant
-elegant and Pelegant are available on all cluster nodes
+# Elegant and Pelegant
+Recommended setup:
 ```bash
-> elegant
-```
-or
-```bash
-> Pelegant
+module load elegant-latest
 ```
 Move to the elegant directory in SLURMExamples
 ```bash
 > cd ../elegant
 ```
-If you do not already have RPN DEFNS, you need it:
-```bash
-> cp /GPFS/APC/dhidas/.defns.rpn /GPFS/APC/user/.defns.rpn
-```
-And you need to add it to your path
-```bash
-> export RPN_DEFNS=/GPFS/APC/user/.defns.rpn
-```
-
----
-
-# Elegant and Pelegant via SLURM
 Run elegant:
 ```bash
 srun elegant fma1p.ele
@@ -137,3 +176,8 @@ and you can plot something with
 ```
 sddsplot -columnNames=s,etax -columnNames=s,betax fma1p.twi
 ```
+
+
+---
+
+
