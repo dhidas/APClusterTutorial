@@ -2,7 +2,7 @@
 
 ---
 
-# APCluster Login and Setup
+## APCluster Login and Setup
 
 To access apcluster you first need to be on the internal network, for instance get to box64-1:
 ```
@@ -31,7 +31,7 @@ apcpu-002
 
 ---
 
-# Environment Modules
+## Environment Modules
 You can load and unload software modules you wish to use:
 ```bash
 > module load python/3.7.3
@@ -54,7 +54,7 @@ To see what modules are currently loaded:
 
 ---
 
-# Environment Modules - MPI
+## Environment Modules - MPI
 To use most MPI, you need a compiler+MPI combination.  A few recommendations are:
 ```bash
 > module load gcc openmpi       # Trust the defaults
@@ -75,7 +75,7 @@ To see a list of available software for the compiler/MPI combination currently l
 
 ---
 
-# Modules of interest
+## Modules of interest
 Some currently installed modules of interest:
 ```text
    gcc/4.9    gcc/6.5    gcc/7.4 (D)    gcc/8.3    gcc/9.1
@@ -92,7 +92,7 @@ Some currently installed modules of interest:
 
 ---
 
-# Download Examples & sbatch
+## Download Examples & sbatch
 Setup gcc and mpi version of choice
 ```bash
 module load gcc/7.4 openmpi
@@ -117,7 +117,7 @@ or submit a batch job using the submit.sh script and sbatch
 
 ---
 
-# The SBATCH script
+## The SBATCH script
 Many options can be specified with the #SBATCH directives.  The basic example script is
 ```text
 #!/bin/bash
@@ -136,7 +136,7 @@ For more information see:
 
 ---
 
-# MPI, Python MPI
+## MPI, Python MPI
 You almost never need worry about MPI.  You should NEVER need to use mpirun nor mpiexec.  SLURM knows about MPI.  An example python MPI program:
 ```bash
 > cd ../Python
@@ -151,7 +151,7 @@ Hello, World! I am process 0 of 2 on apcpu-002.
 
 ---
 
-# Elegant and Pelegant
+## Elegant and Pelegant
 Recommended setup:
 ```bash
 module load elegant-latest
