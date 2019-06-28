@@ -124,6 +124,7 @@ Many options can be specified with the #SBATCH directives.  The basic example sc
 #SBATCH --job-name=hello
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
+#SBATCH --partition=normal
 #SBATCH --ntasks=2
 #SBATCH --time=10:00
 
@@ -166,7 +167,7 @@ srun elegant fma1p.ele
 ```
 Run Pelegant with 88 cores (here you need to specify the correct mpi interface library: pmi2)
 ```bash
-> srun -n 88 --mpi=pmi2 Pelegant fma1p.ele
+> srun -n 88 Pelegant fma1p.ele
 ```
 You can use sbatch to submit a Pelegant job
 ```bash
