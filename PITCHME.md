@@ -79,14 +79,19 @@ To see a list of available software for the compiler/MPI combination currently l
 Some currently installed modules of interest:
 ```text
    gcc/4.9    gcc/6.5    gcc/7.4 (D)    gcc/8.3    gcc/9.1
+
    python/2.7.16    python/3.5.7    python/3.7.3 (D)
    python/3.4.10    python/3.6.8
+
    elegant-latest
+
    fluka-latest
+
    MAD-X/5.04.02
+
    julia/1.1.1
 ```
-
+If something else is needed it can be added as well
 
 
 
