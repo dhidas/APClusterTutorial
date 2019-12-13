@@ -199,7 +199,7 @@ Jupyterhub for apcluster:
 * A notebook interface with many 'kernels'
 * On apcluster provides same enviroment as apcpu-master login
 * Starts in user area: /GPFS/APC/user (for apcluster group)
-
+![jupyterhob](assets/image/apnotebook.png)
 
 
 
