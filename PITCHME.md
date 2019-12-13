@@ -184,6 +184,19 @@ sddsplot -columnNames=s,etax -columnNames=s,betax fma1p.twi
 ```
 
 
+
+---
+
+# apnotebook.nsls2.bnl.gov
+Hello
+```bash
+module load elegant-latest
+```
+
+
+
+
+
 ---
 
 
