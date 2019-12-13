@@ -190,7 +190,15 @@ sddsplot -columnNames=s,etax -columnNames=s,betax fma1p.twi
 # apnotebook
 Jupyterhub for apcluster:
 
-https://apnotebook.nsls2.bnl.gov
+- Website: [https://apnotebook.nsls2.bnl.gov](https://apnotebook.nsls2.bnl.gov)
+
+
+---
+
+## Jupyter
+* A notebook interface with many 'kernels'
+* On apcluster provides same enviroment as apcpu-master login
+* Starts in user area: /GPFS/APC/user (for apcluster group)
 
 
 
