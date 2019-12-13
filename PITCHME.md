@@ -216,7 +216,7 @@ Jupyterhub for apcluster:
 
 ## apcluster software
 * able to use software with lmod
-** module load elegant-latest
+  - module load elegant-latest
 ![jupyterhob](assets/image/lmod.png)
 
 
