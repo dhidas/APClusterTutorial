@@ -202,6 +202,9 @@ Jupyterhub for apcluster:
 ![jupyterhob](assets/image/apnotebook.png)
 
 
+---
+
+
 ## Jupyter kernels
 * These kernels load the same versions as available on the cluster
 * same 'pip install packagename --user', etc
